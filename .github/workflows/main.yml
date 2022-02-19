@@ -6,20 +6,20 @@ on:
     
 jobs:
   cypress-run:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-16.04
     steps:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Install server dependencies
         uses: bahmutov/npm-install@v1
         with:
-          workin-directory: server
+          working-directory: server
       - name: Install web dependencies
         uses: bahmutov/npm-install@v1
         with:
-          workin-directory: web
+          working-directory: web
       - name: Component & API & UI Tests
-        uses: cypress-io/github-action@v2.9.1
+        uses: cypress-io/github-action@v2
         with:
           working-directory: web
           install: false
